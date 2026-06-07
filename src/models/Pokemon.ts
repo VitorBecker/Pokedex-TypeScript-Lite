@@ -1,3 +1,9 @@
+// # Interfaces/Types e Classes de Entidade.
+// Molde rigoroso dos atributos consumidos da API.
+
+// # Camada de Integração Externa (fetch nativo). 
+// Retorna Promises tipadas com Interfaces.
+
 
 export interface PokemonResumo { 
 id: number; 

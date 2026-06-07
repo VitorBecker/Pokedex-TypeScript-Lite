@@ -39,9 +39,9 @@ async function buscarPokemon(nomeOuId: string): Promise<PokemonResumo | null> {
         const pokemonMapResumo: PokemonResumo = {
         id: dados.id,
         nome: dados.name,
+        tipos: dados.types.map((item) => item.type.name),
         altura: dados.height,
-        peso: dados.weight,
-        tipos: dados.types.map((item) => item.type.name)
+        peso: dados.weight
         };
 
         return pokemonMapResumo;
