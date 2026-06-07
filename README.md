@@ -1,11 +1,16 @@
-# Pokédex TypeScript Lite
+# **👾 Pokédex TypeScript Lite**
 
-## Sobre o projeto 
-O Pokédex TypeScript Lite é uma aplicação simples em Node.js com TypeScript 
-que consulta dados de Pokémon na PokeAPI e organiza alguns resultados em um 
-catálogo local durante a execução do programa. 
 
-## Objetivo 
+## **📌 Sobre o Projeto**
+
+O **Pokédex TypeScript Lite** é uma aplicação simples em Node.js com TypeScript que consulta dados de Pokémon em uma API pública, a **PokeAPI**.
+Ele organiza grandes dados em formato simplificado e os organiza e armazena em um catálogo local durante a execução do programa.
+
+O **Pokédex TypeScript Lite** foi desenvolvido como o mini-projeto avaliativo do curso de desenvolvedor Back-End Node.js.
+
+
+### **🎯 Objetivos de Aprendizado**
+
 Praticar os principais conceitos do Módulo 01:
 - Node.js;
 - JavaScript no back-end;
@@ -22,10 +27,11 @@ Praticar os principais conceitos do Módulo 01:
 - tratamento de erros;
 - GitHub;
 - GitFlow;
-- Kanban. 
+- Kanban.
 
 
-## Tecnologias utilizadas
+## **🛠️ Tecnologias Utilizadas**
+
 - Node.js
 - TypeScript
 - TSX
@@ -34,32 +40,42 @@ Praticar os principais conceitos do Módulo 01:
 - GitHub 
 
 
-## Pré-requisitos 
+## **📋 Pré-requisitos**
+
 Antes de executar o projeto, é necessário ter instalado:
-- Node.js
+
+- Node.js8
 - npm
 - Git
-- tsx 
 
-## Como instalar 
 
-### Clone o repositório: 
+## **🚀 Como Instalar e Executar**
+
+Siga o passo a passo abaixo para rodar o projeto localmente em sua máquina:
+
+### **1\. Clonar o repositório:**
 ```bash
 git clone https://github.com/VitorBecker/Pokedex-TypeScript-Lite.git
 ```
-> Acesse a pasta do projeto:
+### **2\. Acessar a pasta do projeto:**
+```bash
 cd Pokedex-TypeScript-Lite
+```
 
-> Instale as dependências: 
+### **3\. Instalar as dependências de desenvolvimento:**
+```bash
 npm install
+```
 
-> Como executar 
-Execute o projeto em ambiente de desenvolvimento: 
-npm run dev 
+### **4\. Executar o projeto em modo de desenvolvimento:**
+```bash
+npm run dev
+```
 
 
-> Estrutura do projeto 
+## **📂 Estrutura do Projeto**
 
+```bash
 pokedex-typescript-lite/ 
 │ 
 ├── src/ 
@@ -83,106 +99,135 @@ pokedex-typescript-lite/
 ├── README.md
 ├── tsconfig.json 
 └── package.json
-
-## Funcionalidades
-- Buscar Pokémon por nome ou ID
-- Tratar erro de Pokémon inexistente
-- Transformar resposta da API em objeto simplificado
-- Adicionar Pokémon ao catálogo local
-- Impedir Pokémon duplicado
-- Listar catálogo
-- Remover Pokémon por ID
-- Exibir mensagens no terminal
-- Exemplos de execução
-- Busca válida 
+```
 
 
-# Lista catálogo (vazio)
-Entrada testada: `catalogo.listar()` antes de qualquer pokemon adicionado.
-Saída obtida: [AVISO] Catálogo vazio.
+## **⚙️ Funcionalidades**
 
-# Busca válida
-Entrada testada: `buscarPokemon("charmander")`
-Saída obtida: [OK] charmander adicionado ao catálogo.
-
-# Busca válida
-Entrada testada: `buscarPokemon("pikachu")`
-Saída obtida: [OK] pikachu adicionado ao catálogo.
-
-# Duplicidade 
-Entrada testada: `buscarPokemon("pikachu")` pela 2ª vez.
-Saída obtida: [AVISO] pikachu já está no catálogo.
-
-# Busca inválida 
-Entrada testada: `buscarPokemon("superhomem")` 
-Saída obtida: [ERRO] Pokémon não encontrado.
-
-# Lista catálogo
-Entrada testada: `catalogo.listar()` após pokemons adicionados.
-Saída obtida: #25 - pikachu | Tipos: electric
-              #4 - charmander | Tipos: fire
-
-# Remoção
-Entrada testada: `catalogo.remover(25)` 
-Saída obtida: [OK] Pokémon removido do catálogo. 
-
-# Remoção inválida
-Entrada testada: `catalogo.remover(24)` 
-Saída obtida: [AVISO] Nenhum Pokémon encontrado com esse ID. 
-
-# Lista catálogo (após remoção do id 25)
-Entrada testada: `catalogo.listar()`
-Saída obtida: #4 - charmander | Tipos: fire
+* \[x\] Buscar Pokémon por nome ou ID diretamente da PokeAPI.  
+* \[x\] Tratar erros de forma amigável quando um Pokémon não for localizado na base remota.  
+* \[x\] Mapear dados JSON complexos da API externa para um formato de objeto local simplificado.  
+* \[x\] Adicionar Pokémons consultados em um catálogo em memória durante o ciclo do app.  
+* \[x\] Impedir registros duplicados de Pokémon com base no mesmo ID.  
+* \[x\] Listar todos os elementos guardados no catálogo formatados de maneira legível.  
+* \[x\] Remover Pokémons cadastrados utilizando seu ID identificador único.  
+* \[x\] Centralizar mensagens operacionais legíveis e padronizadas no terminal.
 
 
-## Conceitos aplicados
 
-# TypeScript 
+## **🖥️ Exemplos de Execução (Roteiro de Testes)**
+
+Abaixo estão testes realizados no terminal através do fluxo automatizado, implementado no `main.ts`:
+
+### **1\. Listagem inicial (Catálogo vazio)**
+
+* **Ação executada:** Chamada de catalogo.listar() antes de adicionar pokemons na lista.  
+* **Saída obtida:**  
+  \[AVISO\] Catálogo vazio.
+
+### **2\. Busca válida (Adicionar Pikachu)**
+
+* **Ação executada:** Busca por "pikachu" via API e inserção no catálogo.  
+* **Saída obtida:** \[OK\] pikachu adicionado ao catálogo.
+
+### **3\. Busca válida (Adicionar Charmander)**
+
+* **Ação executada:** Busca por "charmander" via API e inserção no catálogo.  
+* **Saída obtida:** \[OK\] charmander adicionado ao catálogo.
+
+### **4\. Validação de Duplicidade (Pikachu)**
+
+* **Ação executada:** Tentativa de adicionar o "pikachu" novamente.  
+* **Saída obtida:** \[AVISO\] pikachu já está no catálogo.
+
+### **5\. Busca por Pokémon inexistente**
+
+* **Ação executada:** Busca por "superhomem".
+* **Saída obtida:** \[ERRO\] Pokémon não encontrado.
+
+### **6\. Listar Catálogo preenchido**
+
+* **Ação executada:** Execução de catalogo.listar() com itens cadastrados.  
+* **Saída obtida:**
+```Bash
+#25 - pikachu | Tipos: electric
+#4 - charmander | Tipos: fire
+```
+
+### **7\. Remoção  válida**
+
+* **Ação executada:** Execução de catalogo.remover(25) para excluir o Pikachu.  
+* **Saída obtida:** \[OK\] Pokémon removido do catálogo.
+
+### **8\. Tentativa de Remoção Inválida**
+
+* **Ação executada:** Execução de catalogo.remover(24) (ID inexistente na lista).  
+* **Saída obtida:** \[AVISO\] Nenhum Pokémon encontrado com esse ID.
+
+### **9\. Listar atualizado, após remoção**
+
+* **Ação executada:** Execução de catalogo.listar() final.  
+* **Saída obtida:**
+```bash
+#4 - charmander | Tipos: fire
+```
+
+
+## **🧠 Conceitos Aplicados**
+
+### **TypeScript**
+
 Miniprojeto desenvolvido em modo estrito. A tipagem forte foi utilizada nos parâmetros e métodos da classe CatalogoPokemon, na função buscarPokemon, nas interfaces e nas funções assíncronas.
 
-# Interface PokemonResumo 
+### **Interface PokemonResumo e PokemonApiResponse**
+
 PokemonApiResponse foi criada para mapear a estrutura da API pública. Já a interface PokemonResumo, é uma simplificação da interface anterior, mantendo apenas dados necessários e traduzindo para o pt-br.
 
-# Fetch e async/await 
+### **Fetch e async/await**
+
 São realizadas requisições para a pokeAPI, de forma assíncrona, e o algoritmo garante que o código espere o restorno da API e sua conversão para JSON, antes de prosseguir com o mapeamento.
 
-# Tratamento de erros 
-Explique como o projeto lida com Pokémon inexistente ou erro de busca.
+### **Tratamento de erros**
+
 O try/catch é o responsável por isto, pois ele tenta localizar o pokemon na API, se não encontrar, apresenta mensagem de erro `console.log("[ERRO] Pokémon não encontrado.")`, também é apresentado erro caso a conexão falhe, catch: `console.log("[ERRO] Não foi possível buscar o Pokémon.")`.
 
-# Métodos de array 
+
+### **Métodos de Array**
+
 1. Foram usados na `classe CatalogoPokemon` 
-- some (2x)
-- forEach
-- filter
+* **some (2x)**
+* **forEach**
+* **filter**
 
 2. Foi usado na `function buscarPokemon`
-- map
+* **map**
 
 
-# Classe CatalogoPokemon 
-Explique quais atributos e métodos foram criados.
+### **Classe CatalogoPokemon**
 
 1. Classe inserida no `BoxService.ts`, possui os atributos da interface `PokemonResumo`.
 2. Métodos:
-**adicionar** - Valida se já existe o pokemon e insere no array, apresenta erro de duplicidade caso já exista o pokemon.
-**listar** - Lista os pokemons, desde que a lista não esteja vazia.
-**remover** - Remove o pokemon desde que ele exista, apresenta erro caso o ID não exista.
-
-  
-
-# Organização do Kanban
-Link do Kanban: https://github.com/users/VitorBecker/projects/1
+* **adicionar** - Valida se já existe o pokemon e insere no array, apresenta erro de duplicidade caso já exista o pokemon.
+* **listar** - Lista os pokemons, desde que a lista não esteja vazia.
+* **remover** - Remove o pokemon desde que ele exista, apresenta erro caso o ID não exista.
 
 
-Branches utilizadas
+## **🗃️ Planejamento e Kanban**
+
+O fluxo de progresso das demandas do projeto foi estruturado utilizando as diretivas de agilidade em um quadro de tarefas:
+
+* **Link do Kanban:** [Projeto Kanban \- GitHub Projects](https://github.com/users/VitorBecker/projects/1)
+
+
+### **Branches Utilizadas**
 - main 
 - feat/pokedex 
 - docs/readme 
 
-Melhorias futuras
-- Criar menu interativo no terminal
-- Salvar catálogo em arquivo JSON
-- Exibir HP, ataque e defesa
-- Criar filtros por tipo de Pokémon
-- Criar uma API própria com Express 
+## **🔮 Melhorias Futuras**
+
+* \[ \] Criar menu interativo no terminal.  
+* \[ \] Salvar catálogo em arquivo JSON.  
+* \[ \] Exibir HP, ataque e defesa.  
+* \[ \] Criar filtros por tipo de Pokémon.
+* \[ \] Criar uma API própria com Express.
