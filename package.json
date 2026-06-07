@@ -1,6 +1,14 @@
-{ 
-"scripts": { 
-"dev": "tsx src/main.ts", 
-"build": "tsc" 
-}
+{
+  "name": "pokedex-typescript-lite",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pokedex em TypeScript",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "tsx": "^4.22.4"
+  }
 }

@@ -1,7 +1,8 @@
 // # Ponto de entrada. Instancia os serviços, injeta as dependências e 
 // inicia o loop principal do menu.
 
-import class CatalogoPokemon from "../services/BoxService.ts";
+import { CatalogoPokemon } from "./services/BoxService.js";
+import { buscarPokemon } from "./services/PokeApiService.js";
 
 
 async function main() { 

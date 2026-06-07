@@ -1,12 +1,13 @@
 // # Camada de Persistência Local (node:fs/promises). 
 // Aplica métodos funcionais validados pelo TS.
 
-import type { PokemonApiResponse, PokemonResumo } from "../models/Pokemon";
+
+import type { PokemonApiResponse, PokemonResumo } from "../models/Pokemon.ts";
 
 let catalogo: PokemonResumo[] = []; 
 
 
-class CatalogoPokemon { 
+export class CatalogoPokemon { 
   private pokemons: PokemonResumo[] = []; 
   adicionar(pokemon: PokemonResumo): void { 
     const jaExiste = this.pokemons.some((item) => item.id === pokemon.id); 
@@ -46,8 +47,8 @@ class CatalogoPokemon {
   } 
 } 
 
-
-function adicionarAoCatalogo( 
+// ENTENDO QUE ESSAS FUNÇÕES NÃO SÃO NECESSÁRIAS, POIS A CLASSE JÁ POSSUI ESSAS FUNÇÕES COMO MÉTODOS.
+/* function adicionarAoCatalogo( 
     catalogo: PokemonResumo[], 
     pokemon: PokemonResumo 
 ): PokemonResumo[] { 
@@ -69,3 +70,4 @@ function removerDoCatalogo(
     // implementação: FILTER ou FIND..
 
 }
+ */

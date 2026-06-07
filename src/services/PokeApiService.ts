@@ -23,9 +23,9 @@ conecta diretamente ao uso de async/await estudado na turma. (TypeScript)
     }
 }  */
 
-import type { PokemonApiResponse, PokemonResumo } from "../models/Pokemon";
+import type { PokemonApiResponse, PokemonResumo } from "../models/Pokemon.ts";
 
-async function buscarPokemon(nomeOuId: string): Promise<PokemonResumo | null> {
+export async function buscarPokemon(nomeOuId: string): Promise<PokemonResumo | null> {
     try {
         const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomeOuId}`)
         if (!resposta.ok) {
@@ -39,16 +39,17 @@ async function buscarPokemon(nomeOuId: string): Promise<PokemonResumo | null> {
         const pokemonMapResumo: PokemonResumo = {
         id: dados.id,
         nome: dados.name,
-        tipos: dados.types.map((item) => item.type.name),
+        tipos: dados.types.map((item: { type: { name: string } }) => item.type.name),
         altura: dados.height,
         peso: dados.weight
         };
 
         return pokemonMapResumo;
 
-} catch (erro) {
-    console.log("[ERRO] Não foi possível buscar o Pokémon.");
-    return null;
-} 
+    } catch (erro) {
+        console.log("[ERRO] Não foi possível buscar o Pokémon.");
+        return null;
+    } 
 }
+
 
