@@ -8,7 +8,8 @@ import { buscarPokemon } from "./services/PokeApiService.js";
 async function main() { 
  
   const catalogo = new CatalogoPokemon(); 
- 
+  catalogo.listar(); 
+  
   const pikachu = await buscarPokemon("pikachu"); 
  
   if (pikachu !== null) { 
@@ -27,9 +28,10 @@ async function main() {
     catalogo.adicionar(pikachuDuplicado); 
   } 
  
-  await buscarPokemon("pokemon-inexistente"); 
+  await buscarPokemon("superhomem"); 
   catalogo.listar(); 
-  catalogo.remover(25); 
+  catalogo.remover(25);
+  catalogo.remover(24); 
   catalogo.listar(); 
  
 } 
